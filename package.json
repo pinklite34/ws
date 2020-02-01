@@ -1,0 +1,93 @@
+{
+  "author": {
+    "name": "Michael Akiliev"
+  },
+  "bugs": {
+    "url": "https://github.com/houd1ni/WebsocketPromisify/issues"
+  },
+  "bundleDependencies": [],
+  "deprecated": false,
+  "description": "Wraps your WebSockets into Promise-based class with full d.ts typings on client & server",
+  "homepage": "https://github.com/houd1ni/WebsocketPromisify#readme",
+  "keywords": [
+    "WebSockets",
+    "WS",
+    "Promise",
+    "Socket",
+    "REST",
+    "Ajax",
+    "Easy",
+    "realtime",
+    "Middleware",
+    "JSON",
+    "Data",
+    "transport",
+    "API",
+    "async"
+  ],
+  "license": "MIT",
+  "main": "dist/ws.js",
+  "module": "dist/ws.esm.js",
+  "name": "wspromisify",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houd1ni/WebsocketPromisify.git"
+  },
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "npm run prod:cjs && ava",
+    "test:report": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test:lazy": "ava",
+    "dev": "rollup --watch -c",
+    "prod:cjs": "cross-env NODE_ENV=production BUILD=cjs rollup -c",
+    "prod:es": "cross-env NODE_ENV=production BUILD=es rollup -c",
+    "prod": "npm run prod:es && npm run prod:cjs"
+  },
+  "version": "2.1.17",
+  "ava": {
+    "files": [
+      "./test/specs/*.ts"
+    ],
+    "serial": true,
+    "failFast": true,
+    "timeout": "2m",
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "./test/_register.js"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "@types/node": "^12.6.2",
+    "@types/ramda": "^0.26.15",
+    "@types/ws": "^6.0.1",
+    "ava": "^2.2.0",
+    "axios": "^0.19.0",
+    "codecov": "^3.5.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.17.1",
+    "nyc": "^14.1.1",
+    "ramda": "^0.26.1",
+    "randomatic": "^3.1.1",
+    "rollup": "^1.16.7",
+    "rollup-plugin-alias": "^1.5.2",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-resolve-aliases": "^0.2.0",
+    "rollup-plugin-terser": "5.1.1",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "ws": "^7.1.0"
+  },
+  "types": "./dist/src/WS.d.ts"
+}
+© 2020 GitHub, Inc.
